@@ -19,7 +19,8 @@ import java.util.logging.Logger;
  */
 class MongoDataSource implements IDataSource {  //MongoDB is a database 
                                                 //application: mongodb.org
-
+                                                
+                                                //Perfect for storing safety docs
     public void Upload(Report r) {
         
     }
@@ -38,11 +39,11 @@ class MongoDataSource implements IDataSource {  //MongoDB is a database
 
 
     public Report Download() {
-        return new Report();
+        return new Report(); //todo
     }
     
     public Report LoadLocal() {
-        return new Report();
+        return new Report(); //todo
     }
     
 }
