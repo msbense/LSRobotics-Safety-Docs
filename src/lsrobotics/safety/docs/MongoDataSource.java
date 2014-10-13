@@ -34,9 +34,9 @@ class MongoDataSource implements IDataSource {  //MongoDB is a database
     }
 
     public void SaveLocal(Report r) {
-        XStream serializer = new XStream(); //XML Serializer: saves objects to local
-        serializer.alias("report", Report.class);
-        String data = serializer.toXML(r);  //machine
+        XStream serializer = new XStream();       //XML Serializer: saves objects to local machine
+        serializer.alias("report", Report.class); 
+        String data = serializer.toXML(r);  
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(r.name + ".xml")); //writes to the app directory for now
             writer.write(data);
