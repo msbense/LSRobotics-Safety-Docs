@@ -1,12 +1,21 @@
 package lsrobotics.safety.docs;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBObject;
+import com.mongodb.Mongo;
+import com.mongodb.MongoURI;
 import com.thoughtworks.xstream.XStream;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.UnknownHostException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -19,7 +28,16 @@ class MongoDataSource implements IDataSource {  //MongoDB is a database
         
     }
     public void Upload(Report r) {
-        
+        try {
+            Mongo client = new Mongo(new MongoURI("mongodb://root:LSCHSR5181@192.168.1.15/admin"));
+            DB data = client.getDB("lsh");
+            DBCollection col = data.getCollection("reports");
+            BasicDBObject dbreport = new BasicDBObject("name", r.name);
+            col.insert(dbreport);
+        } catch (UnknownHostException ex) {
+            System.out.println("MongoDataSource, Upload: Cannot connect to database");
+        }
+
     }
 
     public void SaveLocal(Report r) {
@@ -36,6 +54,14 @@ class MongoDataSource implements IDataSource {  //MongoDB is a database
     }
     
     public Report Download(String fileName) {
+        
+        try {
+            Mongo client = new Mongo(new MongoURI("mongodb://root:LSCHSR5181@192.168.1.15/admin"));
+        } catch (UnknownHostException ex) {
+            System.out.println("MongoDataSource, Download: Cannot connect to database");
+        }
+        
+        
         return new Report(); //todo
     }
     
