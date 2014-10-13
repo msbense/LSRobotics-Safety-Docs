@@ -11,6 +11,6 @@ public class Report {
 }
 
 
-//Please modify this class to contain the infe we need
+//Please modify this class to contain the info we need
 //
 //We may need multiple classes to represent everything

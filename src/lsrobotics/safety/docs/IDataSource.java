@@ -10,6 +10,7 @@ package lsrobotics.safety.docs;
                                       
                                       Feel free to change the interface so I know
                                       what would be useful to the front-end*/
+
 public interface IDataSource {
     public void Upload(Report r); //upload a report to the internet/a database
     
