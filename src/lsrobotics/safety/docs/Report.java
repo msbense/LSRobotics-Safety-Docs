@@ -7,5 +7,10 @@ package lsrobotics.safety.docs;
  */
 public class Report {
     public String name;
-    //...stuff we need to record
+    //...stuff we need to record    
 }
+
+
+//Please modify this class to contain the infe we need
+//
+//We may need multiple classes to represent everything
