@@ -97,14 +97,16 @@ public class mainWindow extends JFrame implements ActionListener {
 		else if(ae.getSource() == JBmanuel) {
 			//when the manuel button is pressed do...
 		}
-		else if(ae.getSource() = JBmembers) {
+		else if(ae.getSource() == JBmembers) {
 			//when the members button is pressed do...
 		}
 	}
 	class Background extends Canvas {
 		int width, height; //the dimensions of the canvas
 		
-		public Background() {
+		public Background(int w, int h) {
+                        this.width = w;
+                        this.height = h;
 			setBackground(Color.RED); //background is red
 		}
 		public void paint(Graphics g) {

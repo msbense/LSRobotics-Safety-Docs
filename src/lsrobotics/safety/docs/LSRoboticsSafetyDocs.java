@@ -7,7 +7,6 @@ package lsrobotics.safety.docs;
 public class LSRoboticsSafetyDocs {
     public static void main(String[] args) {
         IDataSource data = new MongoDataSource("localhost", "user", "pass");
-        
         /// TODO: Front end
     }
     
